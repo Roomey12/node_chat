@@ -1,7 +1,7 @@
 const UsersModel = require("./models/users.model");
 const _ = require("lodash");
 const config = require("./config");
-const bcrypt = require("bcrypt");
+//const bcrypt = require("bcrypt");
 const express = require("express");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
@@ -40,7 +40,7 @@ module.exports = app => {
       })
         .lean()
         .exec();
-      if (user && bcrypt.compareSync(req.body.password, user.password)) {
+      if (user && req.body.password === user.password) {
         const token = createToken({ id: user._id, username: user.username });
         res.cookie("token", token, {
           httpOnly: true

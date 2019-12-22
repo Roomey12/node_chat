@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const bcrtypt = require("bcrypt");
+//const bcrtypt = require("bcrypt");
 
 const UsersSchema = new Schema(
   {
@@ -13,11 +13,11 @@ const UsersSchema = new Schema(
   }
 );
 
-UsersSchema.pre("save", function(next) {
-  if (this.isModified("password") || this.isNew()) {
-    this.password = bcrtypt.hashSync(this.password, 12);
-  }
-  next();
-});
+// UsersSchema.pre("save", function(next) {
+//   if (this.isModified("password") || this.isNew()) {
+//     this.password = bcrtypt.hashSync(this.password, 12);
+//   }
+//   next();
+// });
 
 module.exports = model("UsersModel", UsersSchema);
