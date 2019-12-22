@@ -12,7 +12,7 @@
     "socket.io",
     "express"
   ],
-  "author": "Yurii Chikhrai",
+  "author": "Alex Lutsenko",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.0",
