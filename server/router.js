@@ -33,7 +33,7 @@ module.exports = app => {
     res.render("index.html", { username: req.user.username });
   });
 
-  app.post("/login", async (req, res) => {
+  app.post("https://nodemychat.herokuapp.com/login", async (req, res) => {
     try {
       let user = await UsersModel.findOne({
         username: { $regex: _.escapeRegExp(req.body.username), $options: "i" }
@@ -57,7 +57,7 @@ module.exports = app => {
     }
   });
 
-  app.post("/register", async (req, res) => {
+  app.post("https://nodemychat.herokuapp.com/register", async (req, res) => {
     try {
       let user = await UsersModel.findOne({
         username: { $regex: _.escapeRegExp(req.body.username), $options: "i" }
@@ -86,7 +86,7 @@ module.exports = app => {
     }
   });
 
-  app.post("/logout", (req, res) => {
+  app.post("https://nodemychat.herokuapp.com/logout", (req, res) => {
     res.clearCookie("token");
     res.status(200).send({ message: "Logout success." });
   });
