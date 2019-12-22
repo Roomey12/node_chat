@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - node
+script:
+  - npm test
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  app: nodemychat
+  api_key: $API_KEY1
