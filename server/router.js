@@ -31,7 +31,6 @@ module.exports = app => {
 
   app.get("/", checkAuth, (req, res) => {
     res.render("index.html", { username: req.user.username });
-    res.sendFile("index.html");
   });
 
   app.post("/login", async (req, res) => {

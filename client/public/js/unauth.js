@@ -27,7 +27,7 @@ $("form").on("submit", e => {
   let value = $(e.target).attr("class");
   let selector = "." + value;
   $.ajax({
-    url: "/" + value,
+    url: "https://nodemychat.herokuapp.com/" + value,
     type: "POST",
     data: {
       username: $(selector + " [name=username]").val(),
