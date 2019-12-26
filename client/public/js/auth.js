@@ -62,6 +62,10 @@ $(document).ready(() => {
     message.date = new Date(message.date).toLocaleString();
     message.username = encodeHTML(message.username);
     message.content = encodeHTML(message.content);
+    if(message.content == "123")
+    {
+      alert("123");
+    }
 
     var html = `
             <li>
